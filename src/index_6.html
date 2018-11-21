@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TestContract DApp</title>
+  </head>
+  <body>
+    <h1 class="text-center">TestContract DApp - KAIST MFE Lecture</h1>
+    <hr/>
+
+
+    <!-- step1  -->
+    <div style="text-align: center;">
+      <h3>Data value <span id="value"></span> <span style="color: red"></span></h3>
+    </div>
+    <div style="text-align: center;">
+      <h3>Balance <span id="balance"></span> <span style="color: red"></span></h3>
+    </div>
+    <!-- step2 -->
+    <div style="text-align: left;">
+      <span>
+      <button id="SetByNonPayable" onclick="setByNonPayable()" >SetNP</button>
+      &nbsp; Account &nbsp;
+      <input type="text" id="sender" name="nonpayable" style="width: 330px"/>
+      &nbsp; Data &nbsp;
+      <input type="number" id="input_value" name="nonpayable"/>
+      </span>
+    </div>
+    <div style="text-align: left;">
+      <span>
+      <button id="SetByPayable" onclick="setByPayable()" >SetP &nbsp;</button>
+      &nbsp; Account &nbsp;
+      <input type="text" id="p_sender" name="payable" style="width: 330px"/>
+      &nbsp; Data &nbsp;
+      <input type="number" id="p_input_value" name="payable"/>
+      &nbsp; Ether &nbsp;
+      <input type="number" id="p_ether" name="payable"/>
+      </span>
+    </div>
+    <div style="text-align; left;">
+      <span>
+      <button id="GetOwner" onclick="getOwner()" >Get Contract Owner</button>
+      &nbsp; <span id="owner"></span>
+    </div>
+
+      </span>
+    </div>
+    <div style="text-align; left;">
+      <span>
+      <button id="Withdraw" onclick="withdraw()" >Withdraw</button>
+      &nbsp; Account &nbsp;
+      <input type="text" id="w_sender" name="withdraw" style="width: 330px"/>
+      </span>
+    </div>
+    <!-- step3 -->
+    <br/>
+    <div>
+      Events List
+      <ul id="eventsList">
+        <!-- Events will appear here from app.js -->
+      </ul>
+    </div>
+
+
+
+    <!-- JQuery will help us extract data from json files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Web3.js will help us interact with the deployed smart contract -->
+    <script src="JShelpers/web3.min.js"></script>
+    <!-- Truffle contract  will our life easier when interacting with smart contracts -->
+    <script src="JShelpers/truffle-contract.js"></script>
+    <!-- app.js is where we will write our JS logic -->
+    <script src="app.js"></script>
+  </body>
+</html>
